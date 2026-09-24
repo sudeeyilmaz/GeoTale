@@ -24,7 +24,7 @@ class MediaPipeline:
 
     def add_node(self, node:BaseProcessor):
         self.nodes.append(node)
-    def execute(self,asset=MediaAsset)->MediaAsset:
+    def execute(self, asset: MediaAsset) -> MediaAsset:
         for node in self.nodes:
             asset = node.process(asset)
         return asset
